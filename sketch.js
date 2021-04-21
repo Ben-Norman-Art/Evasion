@@ -4,25 +4,27 @@
 
 let state = 'title';
 let cnv;
+let points = 0;
+
 
 function setup() {
-
+  cnv = createCanvas(600, 600);
 
 }
 
 function draw() {
 
-  switch (state){
-  case 'title':
-    title();
-    cnv.mouseClicked(titleMouseCLicked);
-    break;
-  case ' level 1':
-    level1();
-    cnv.mouseClicked(level1MouseClicked);
-break;
-  default:
-    break;
+  switch (state) {
+    case 'title':
+      title();
+      cnv.mouseClicked(titleMouseCLicked);
+      break;
+    case ' level 1':
+      level1();
+      cnv.mouseClicked(level1MouseClicked);
+      break;
+    default:
+      break;
   }
 }
 
@@ -39,14 +41,15 @@ function title() {
   text('Click Anywhere To Begin', 100, 300);
 }
 
-function titleMouseClicked(){
+function titleMouseClicked() {
   state = 'level 1'
 }
 
 function level1() {
   background(50, 150, 200);
+  text('Click for points', 0, height - 30);
 }
 
-function level1MouseClicked(){
-
+function level1MouseClicked() {
+  points++;
 }
