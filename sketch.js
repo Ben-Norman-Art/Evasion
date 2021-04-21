@@ -41,7 +41,7 @@ function title() {
   text('WELCOME', 100, 100);
 
 
-  textSize(45);
+  textSize(35);
   text('Click Anywhere To Begin', 100, 300);
 }
 
@@ -75,5 +75,5 @@ function youWin(){
 
 function youWinMouseClicked(){
   state = 'level 1';
-  points = 0; 
+  points = 0;
 }
