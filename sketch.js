@@ -3,32 +3,50 @@
 
 
 let state = 'title';
+let cnv;
 
-function setup(){
-  createCanvas(600, 600);
+function setup() {
+
 
 }
 
-function draw(){
+function draw() {
 
-  if (state === 'title'){
+  switch (state){
+  case 'title':
     title();
-  } else if (state === 'level 1'){
+    cnv.mouseClicked(titleMouseCLicked);
+    break;
+  case ' level 1':
     level1();
+    cnv.mouseClicked(level1MouseClicked);
+break;
+  default:
+    break;
   }
 }
 
-function mousePressed(){
-  state = 'level 1';
-}
 
-function title(){
+
+function title() {
   background(220);
   textSize(75);
   stroke(255);
   text('WELCOME', 100, 100);
+
+
+  textSize(45);
+  text('Click Anywhere To Begin', 100, 300);
 }
 
-function level1(){
+function titleMouseClicked(){
+  state = 'level 1'
+}
+
+function level1() {
   background(50, 150, 200);
+}
+
+function level1MouseClicked(){
+
 }
