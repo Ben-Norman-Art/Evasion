@@ -2,7 +2,7 @@
 
 
 
-
+let state = 'title';
 
 function setup(){
   createCanvas(600, 600);
@@ -10,6 +10,13 @@ function setup(){
 }
 
 function draw(){
+
+  if (state === 'title'){
+    title();
+  }
+}
+
+function title(){
   background(220);
   textSize(75);
   stroke(255);
