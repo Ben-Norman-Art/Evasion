@@ -22,7 +22,7 @@ function draw() {
       title();
       cnv.mouseClicked(titleMouseClicked);
       break;
-    case ' level 1':
+    case 'level 1':
       level1();
       cnv.mouseClicked(level1MouseClicked);
       break;
