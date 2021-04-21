@@ -5,11 +5,14 @@
 let state = 'title';
 let cnv;
 let points = 0;
+let w = 600;
+let h = 600;
 
 
 function setup() {
-  cnv = createCanvas(600, 600);
+  cnv = createCanvas(w, h);
 
+  textFont('bahnschrift');
 }
 
 function draw() {
@@ -38,11 +41,12 @@ function title() {
   background(220);
   textSize(75);
   stroke(255);
-  text('WELCOME', 100, 100);
+  textAlign(CENTER);
+  text('WELCOME', w/2, h/4);
 
 
   textSize(35);
-  text('Click Anywhere To Begin', 100, 300);
+  text('Click Anywhere To Begin', w/2, h/2);
 }
 
 function titleMouseClicked() {
