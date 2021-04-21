@@ -20,7 +20,7 @@ function draw() {
   switch (state) {
     case 'title':
       title();
-      cnv.mouseClicked(titleMouseCLicked);
+      cnv.mouseClicked(titleMouseClicked);
       break;
     case ' level 1':
       level1();
