@@ -58,7 +58,9 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
-  text('Click for points', w/2, h - 30);
+  //text('Click for points', w/2, h - 30);
+
+  player.display();
 }
 
 function level1MouseClicked() {
