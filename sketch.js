@@ -7,12 +7,15 @@ let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
-
+let player;
 
 function setup() {
   cnv = createCanvas(w, h);
 
   textFont('bahnschrift');
+
+  player = new Player();
+
 }
 
 function draw() {
