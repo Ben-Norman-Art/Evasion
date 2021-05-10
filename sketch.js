@@ -115,8 +115,7 @@ function level1() {
   }
 }
 
-  text(`points: ${points}`
-    w / 4, h - 30);
+  text(`points: ${points}`, w / 4, h - 30);
 
 }
 
