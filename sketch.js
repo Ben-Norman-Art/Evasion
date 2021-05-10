@@ -8,7 +8,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -17,8 +17,8 @@ function setup() {
 
   player = new Player();
 
-  coin = new Coins();
-
+  //coins[0] = new Coins();
+  coins.push(new Coin());
 }
 
 function draw() {
@@ -41,6 +41,17 @@ function draw() {
   }
 }
 
+function keyPressed() {
+  if (key == LEFT_ARROW) {
+    player.direction = 'left'
+  } else if (key == RIGHT_ARROW) {
+    player.direction = 'right'
+  } else if (key == UP_ARROW) {
+    player.direction = 'up'
+  } else if (key == DOWN_ARROW) {
+    player.direction = 'down'
+  }
+}
 
 
 function title() {
@@ -48,11 +59,11 @@ function title() {
   textSize(75);
   fill(255);
   textAlign(CENTER);
-  text('WELCOME', w/2, h/4);
+  text('WELCOME', w / 2, h / 4);
 
 
   textSize(35);
-  text('Click Anywhere To Begin', w/2, h/2);
+  text('Click Anywhere To Begin', w / 2, h / 2);
 }
 
 function titleMouseClicked() {
@@ -62,32 +73,51 @@ function titleMouseClicked() {
 function level1() {
   background(50, 150, 200);
   //text('Click for points', w/2, h - 30);
+  if (random(1) <= 0.01){
+    coins.push(new Coin());
+  }
 
   player.display();
+  player.move();
 
-  coin.display();
+
+  for (let i = 0; i < coins.length; i++){
+    coins[i].display();
+    coins[i].move();
+  }
+
+  for (let i = coins.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, coins.x, coins.y) <= (player.r + player.r) / 2) {
+    points++;
+    console.log(points);
+  }
+}
+
+  text(`points: ${points}`
+    w / 4, h - 30);
+
 }
 
 function level1MouseClicked() {
   points++;
 
-  if (points >= 10){
+  if (points >= 10) {
     state = 'You Win';
   }
 }
 
-function youWin(){
+function youWin() {
   background(255, 50, 80);
   textSize(75);
   stroke(255);
-  text('YOU WIN', w/2, h/2);
+  text('YOU WIN', w / 2, h / 2);
 
 
   textSize(45);
-  text('Click Anywhere To Restart', w/2, h * 3/4);
+  text('Click Anywhere To Restart', w / 2, h * 3 / 4);
 }
 
-function youWinMouseClicked(){
+function youWinMouseClicked() {
   state = 'level 1';
   points = 0;
 }
