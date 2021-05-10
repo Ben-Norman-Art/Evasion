@@ -1,5 +1,5 @@
 
-class Player(){
+class Player {
   constructor(){
     this.r = 60;
     this.x = w/2;
