@@ -10,10 +10,13 @@ let h = 600;
 let player;
 let coins = [];
 let playerImg;
+let coinImg;
 
 function preload(){
-  playerImg = loadImage('assets/First_Character_Sprite.png')
+  playerImg = loadImage('assets/First_Character_Sprite.png');
+  coinImg = loadImage('assets/Meteor_Pixelated.png');
 }
+
 function setup() {
   cnv = createCanvas(w, h);
 
