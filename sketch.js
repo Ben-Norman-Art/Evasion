@@ -87,7 +87,7 @@ function level1() {
   player.display();
   player.move();
 
-   using for loop
+  //using for loop
   for (let i = 0; i < coins.length; i++){
     coins[i].display();
     coins[i].move();
