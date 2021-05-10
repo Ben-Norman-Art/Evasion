@@ -9,7 +9,11 @@ let w = 600;
 let h = 600;
 let player;
 let coins = [];
+let playerImg;
 
+function preload(){
+  playerImg = loadImage('assets/First_Character_Sprite.png')
+}
 function setup() {
   cnv = createCanvas(w, h);
 
@@ -80,16 +84,31 @@ function level1() {
   player.display();
   player.move();
 
-
+   using for loop
   for (let i = 0; i < coins.length; i++){
     coins[i].display();
     coins[i].move();
   }
 
+  // using forEach loop
+  //coins.forEach(function(coin){
+  //  coins.display();
+  //  coins.move();
+  //})
+
+  //using for of loop
+  //for (let coin of coins){
+  //  coins.display();
+  //  coins.move();
+  }
+
+
+
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins.x, coins.y) <= (player.r + player.r) / 2) {
     points++;
     console.log(points);
+    coins.splice(i, 1);
   }
 }
 
