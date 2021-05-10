@@ -105,12 +105,12 @@ function level1() {
   //  coins.move();
   }
 
-
-
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins.x, coins.y) <= (player.r + player.r) / 2) {
     points++;
     console.log(points);
+    coins.splice(i, 1);
+  } else if (coins[i].y > h){
     coins.splice(i, 1);
   }
 }
