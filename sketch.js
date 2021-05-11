@@ -118,7 +118,6 @@ function level1() {
   text(`points: ${points}`, w / 4, h - 30);
 
 }
-}
 
 function level1MouseClicked() {
   points++;
