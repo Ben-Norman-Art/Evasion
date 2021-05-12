@@ -49,13 +49,13 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key == LEFT_ARROW) {
+  if (keyCode == LEFT_ARROW) {
     player.direction = 'left'
-  } else if (key == RIGHT_ARROW) {
+  } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
-  } else if (key == UP_ARROW) {
+  } else if (keyCode == UP_ARROW) {
     player.direction = 'up'
-  } else if (key == DOWN_ARROW) {
+  } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
   }
 }
