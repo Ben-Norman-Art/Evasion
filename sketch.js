@@ -8,16 +8,16 @@ let points = 0;
 let w = 750;
 let h = 750;
 let player;
-let coins = [];
+let meteors = [];
 let playerImg;
-let coinImg;
+let meteorsImg;
 let forestImg;
 let mountainImg;
 let cityImg;
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
-  coinImg = loadImage('assets/Meteor_Pixelated.png');
+  meteorsImg = loadImage('assets/Meteor_Pixelated.png');
   forestImg = loadImage('assets/Wilderness_Background.png');
   mountainImg = loadImage('assets/Mountain_Background.png');
   cityImg = loadImage('assets/City_Background.png')
@@ -32,7 +32,7 @@ function setup() {
   player = new Player();
 
   //coins[0] = new Coins();
-  coins.push(new Coin());
+  meteors.push(new Meteors());
 }
 
 function draw() {
@@ -88,7 +88,7 @@ function level1() {
   background(50, 150, 200);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
-    coins.push(new Coin());
+    meteors.push(new Coin());
   }
 
   player.display();
@@ -96,8 +96,8 @@ function level1() {
 
   //using for loop
   for (let i = 0; i < coins.length; i++) {
-    coins[i].display();
-    coins[i].move();
+    meteors[i].display();
+    meteors[i].move();
   }
 
   // using forEach loop
@@ -112,13 +112,13 @@ function level1() {
   //  coins.move();
 }
 
-for (let i = coins.length - 1; i >= 0; i--) {
-  if (dist(player.x, player.y, coins.x, coins.y) <= (player.r + player.r) / 2) {
+for (let i = meteors.length - 1; i >= 0; i--) {
+  if (dist(player.x, player.y, meteors.x, meteors.y) <= (player.r + player.r) / 2) {
     points++;
     console.log(points);
-    coins.splice(i, 1);
-  } else if (coins[i].y > h) {
-    coins.splice(i, 1);
+    meteors.splice(i, 1);
+  } else if (meteors[i].y > h) {
+    meteors.splice(i, 1);
   }
 
 

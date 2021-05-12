@@ -1,5 +1,5 @@
 
-class Coin {
+class Meteor {
   constructor(){
     this.r = 160;
     this.x = random(w);
