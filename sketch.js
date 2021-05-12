@@ -5,16 +5,23 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 600;
-let h = 600;
+let w = 750;
+let h = 750;
 let player;
 let coins = [];
 let playerImg;
 let coinImg;
+let forestImg;
+let mountainImg;
+let cityImg
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
   coinImg = loadImage('assets/Meteor_Pixelated.png');
+  forestImg = loadImage('assets/Wilderness_Background.png');
+  moutainImg = loadImage('assets/Moutain_Background.png');
+  cityImg = loadImage('assets/City_Background.png')
+
 }
 
 function setup() {
@@ -78,7 +85,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  background(50, 150, 200);
+  image(cityImg);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
     coins.push(new Coin());
