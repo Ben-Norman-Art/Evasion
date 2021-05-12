@@ -72,6 +72,7 @@ function title() {
   background(15);
   textSize(75);
   fill(255);
+  textFont(joystix)
   textAlign(CENTER);
   text('WELCOME', w / 2, h / 4);
 
