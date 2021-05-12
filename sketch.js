@@ -12,7 +12,7 @@ let coins = [];
 let playerImg;
 let coinImg;
 
-function preload(){
+function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
   coinImg = loadImage('assets/Meteor_Pixelated.png');
 }
@@ -80,7 +80,7 @@ function titleMouseClicked() {
 function level1() {
   background(50, 150, 200);
   //text('Click for points', w/2, h - 30);
-  if (random(1) <= 0.01){
+  if (random(1) <= 0.01) {
     coins.push(new Coin());
   }
 
@@ -88,7 +88,7 @@ function level1() {
   player.move();
 
   //using for loop
-  for (let i = 0; i < coins.length; i++){
+  for (let i = 0; i < coins.length; i++) {
     coins[i].display();
     coins[i].move();
   }
@@ -103,19 +103,20 @@ function level1() {
   //for (let coin of coins){
   //  coins.display();
   //  coins.move();
-  }
+}
 
-  for (let i = coins.length - 1; i >= 0; i--){
+for (let i = coins.length - 1; i >= 0; i--) {
   if (dist(player.x, player.y, coins.x, coins.y) <= (player.r + player.r) / 2) {
     points++;
     console.log(points);
     coins.splice(i, 1);
-  } else if (coins[i].y > h){
+  } else if (coins[i].y > h) {
     coins.splice(i, 1);
   }
-}
 
-  text(`points: ${points}`, w / 4, h - 30);
+
+
+text(`points: ${points}`, w / 4, h - 30);
 
 }
 
