@@ -13,7 +13,7 @@ let playerImg;
 let coinImg;
 let forestImg;
 let mountainImg;
-let cityImg
+let cityImg;
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
@@ -72,7 +72,6 @@ function title() {
   background(15);
   textSize(75);
   fill(255);
-  textFont(joystix)
   textAlign(CENTER);
   text('WELCOME', w / 2, h / 4);
 
@@ -86,7 +85,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  image(cityImg);
+  background(50, 150, 200);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
     coins.push(new Coin());
