@@ -19,7 +19,7 @@ function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
   coinImg = loadImage('assets/Meteor_Pixelated.png');
   forestImg = loadImage('assets/Wilderness_Background.png');
-  moutainImg = loadImage('assets/Moutain_Background.png');
+  mountainImg = loadImage('assets/Mountain_Background.png');
   cityImg = loadImage('assets/City_Background.png')
 
 }
