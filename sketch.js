@@ -88,7 +88,7 @@ function level1() {
   background(50, 150, 200);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
-    meteors.push(new Coin());
+    meteors.push(new Meteors());
   }
 
   player.display();
