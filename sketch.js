@@ -14,6 +14,7 @@ let meteorsImg;
 let forestImg;
 let mountainImg;
 let cityImg;
+let arraybackground = [playerImg, meteorsImg, forestImg, mountainImg, cityImg];
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
@@ -85,7 +86,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  background(50, 150, 200);
+  arraybackground = [];
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
     meteors.push(new Meteors());
