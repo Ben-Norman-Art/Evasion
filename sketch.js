@@ -86,7 +86,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  arraybackground = [];
+  background(arraybackground);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
     meteors.push(new Meteors());
