@@ -24,7 +24,6 @@ function preload() {
   }
 }
 
-}
 
 function setup() {
   cnv = createCanvas(w, h);
