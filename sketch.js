@@ -11,13 +11,14 @@ let player;
 let meteors = [];
 let playerImg;
 let meteorsImg;
-let forestImg;
-let mountainImg;
-let cityImg;
 let arraybackground = [];
 let imageCounter = 0;
 
 function preload() {
+
+  player = loadImage('assets/First_Character_Sprite.png');
+  meteors = loadImage('assets/Meteor_Pixelated.png');
+
 
   for (let i = 0; i <= 9; i++) {
     arraybackground[i] = loadImage(`assets/Background_${i}.png`)
