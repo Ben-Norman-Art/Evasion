@@ -14,14 +14,15 @@ let meteorsImg;
 let forestImg;
 let mountainImg;
 let cityImg;
-let arraybackground = [playerImg, meteorsImg, forestImg, mountainImg, cityImg];
+let arraybackground = [];
+let imageCounter = 0;
 
 function preload() {
-  playerImg = loadImage('assets/First_Character_Sprite.png');
-  meteorsImg = loadImage('assets/Meteor_Pixelated.png');
-  forestImg = loadImage('assets/Wilderness_Background.png');
-  mountainImg = loadImage('assets/Mountain_Background.png');
-  cityImg = loadImage('assets/City_Background.png')
+
+  for (let i = 0; i <= 9; i++) {
+    arraybackground[i] = loadImage(`assets/Background_${i}.png`)
+  }
+}
 
 }
 
@@ -54,6 +55,15 @@ function draw() {
     default:
       break;
   }
+
+  image(arraybackground[imageCounter], w, h);
+    if (imageCounter < arraybackground.length - 1) {
+      imageCounter++;
+    } else {
+      imageCounter = 0;
+    }
+  }
+}
 }
 
 function keyPressed() {
@@ -86,7 +96,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  background(arraybackground);
+  background(arraybackground[i]);
   //text('Click for points', w/2, h - 30);
   if (random(1) <= 0.01) {
     meteors.push(new Meteors());
