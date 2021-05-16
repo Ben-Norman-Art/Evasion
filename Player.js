@@ -29,13 +29,11 @@ class Player {
       if (this.y < h - this.r){
         this.y -= this.speed;
       }
-        this.x -= this.speed;
         break;
       case 'right':
       if (this.x < w - this.r){
         this.x -= this.speed;
       }
-        this.x -= this.speed;
         break;
       case 'left':
       if (this.x > 0){
