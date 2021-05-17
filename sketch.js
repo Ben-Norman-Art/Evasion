@@ -15,7 +15,7 @@ let meteorsImg;
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
-  meteorsImg = loadImage('assets/Meteor_Pixelated.png');
+  meteorsImg = loadImage('assets/Meteor_Pixel.gif');
   //mountainImg = loadImage('assets/Background_0.png');
   //forestImg = loadImage('assets/Background_1.png');
   //cityImg = loadImage('assets/Background_2.png');
