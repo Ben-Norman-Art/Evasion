@@ -20,9 +20,7 @@ function preload() {
   meteors = loadImage('assets/Meteor_Pixelated.png');
 
 
-  for (let i = 0; i <= 9; i++) {
-    arraybackground[i] = loadImage(`assets/Background_${i}.png`)
-  }
+
 }
 
 
