@@ -18,7 +18,6 @@ let imgNum = 0;
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
   meteorsImg = loadImage('assets/Meteor_Pixel.gif');
-  //mountainImg = loadImage('assets/Background_0.png');
   bgImg[0] = loadImage('assets/Background_1.png');
   bgImg[1] = loadImage('assets/Background_0.png');
   bgImg[2] = loadImage('assets/Background_2.png');
