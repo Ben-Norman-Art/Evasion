@@ -11,7 +11,7 @@ let h = 600;
 function setup() {
   cnv = createCanvas(w, h);
 
-  textFont('joystix');
+  textFont('monaco');
 }
 
 function draw() {
