@@ -52,13 +52,6 @@ function draw() {
       break;
   }
 
-  image(arraybackground[imageCounter], w, h);
-    if (imageCounter < arraybackground.length - 1) {
-      imageCounter++;
-    } else {
-      imageCounter = 0;
-    }
-
 
 function keyPressed() {
   if (keyCode == LEFT_ARROW) {
