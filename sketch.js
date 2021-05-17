@@ -96,6 +96,9 @@ function level1() {
     points++
     console.log(points);
     meteors.splice(i, 1);
+  } else if (meteors[i].y > h){
+    meteors.splice(i, 1);
+    console.log('meteors are gone');
   }
 }
   text(`Points: ${points}`, w / 4, h - 30);
