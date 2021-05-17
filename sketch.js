@@ -3,11 +3,15 @@
 let state = 'title';
 let cnv;
 let points = 0;
+let w = 600;
+let h = 600;
 
 
 
 function setup() {
-  cnv = createCanvas(600, 600);
+  cnv = createCanvas(w, h);
+
+  textFont('joystix');
 }
 
 function draw() {
@@ -36,11 +40,12 @@ function title() {
   background(100);
   textSize(80);
   stroke(0);
-  text('MY GAME', 100, 100);
+  textAlign(CENTER);
+  text('MY GAME', w/2, h/5);
 
 
   textSize(30);
-  text('Click anywhere to start', 100, 300);
+  text('Click anywhere to start', w/2, h/2);
 }
 
 function titleMouseClicked() {
