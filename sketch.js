@@ -1,6 +1,6 @@
 'use strict'
 
-
+let state = 'title';
 
 
 
@@ -9,8 +9,11 @@ function setup(){
 }
 
 function draw(){
-  background(100);
+
+  if (state === 'title'){}
+  background(100);  
+  textSize(80);
+  stroke(0);
   text('MY GAME', 100, 100);
-
-
+}
 }
