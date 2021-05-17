@@ -13,7 +13,7 @@ let meteors = [];
 function setup() {
   cnv = createCanvas(w, h);
 
-  textFont('back-to-1982');
+  textFont('bahnscrift');
 
   player = new Player();
 
