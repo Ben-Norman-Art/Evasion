@@ -37,9 +37,9 @@ function draw() {
 }
 
 function title() {
-  background(100);
+  background(0);
   textSize(80);
-  stroke(0);
+  fill(255);
   textAlign(CENTER);
   text('MY GAME', w/2, h/5);
 
@@ -55,7 +55,7 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
-  text('Click for Points', 0, height - 30);
+  text('Click for Points', w/2, h - 30);
 }
 
 function level1MousedClicked() {
@@ -71,11 +71,11 @@ function youWin(){
   background(255, 50, 90);
   textSize(80);
   stroke(0);
-  text('You Win', 100, 100);
+  text('You Win', w/2, h/2);
 
 
   textSize(30);
-  text('Click anywhere to restart', 100, 300);
+  text('Click anywhere to restart', w/2, h * 3/4);
 }
 
 function youWinMouseClicked(){
