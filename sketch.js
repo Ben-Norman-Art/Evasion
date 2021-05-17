@@ -62,7 +62,7 @@ function draw() {
     } else {
       imageCounter = 0;
     }
-  }}
+
 
 function keyPressed() {
   if (keyCode == LEFT_ARROW) {
