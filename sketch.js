@@ -69,7 +69,7 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
-  text('Click for Points', w/2, h - 30);
+
 
   player.display();
   player.move();
@@ -77,15 +77,22 @@ function level1() {
   meteors.display();
   meteors.move();
 
+  if (dist(player.x, player.y, meteors.x, meteors.y) <= (player.r + meteors.r) / 2){
+    points++
+    console.log(points);
+  }
+
+  text('Points: ' + points, w/4, h - 30);
+
 }
 
 function level1MousedClicked() {
-  points++;
-  console.log('canvas is clicked on level 1' + points);
-
-  if (points >= 10){
-    state = 'You Win';
-  }
+  //points++;
+  //console.log('canvas is clicked on level 1' + points);
+  //
+  //if (points >= 10){
+  //  state = 'You Win';
+  //}
 }
 
 function youWin(){
