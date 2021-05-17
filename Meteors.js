@@ -1,6 +1,6 @@
 class Meteors {
   constructor() {
-    this.r = 300;
+    this.r = 250;
     this.x = random(w);
     this.y = 0 - this.r;
   }
