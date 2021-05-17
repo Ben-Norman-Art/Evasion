@@ -79,7 +79,7 @@ function level1() {
   player.move();
 
 
-  for (let i = 0; i < coins.length; i++) {
+  for (let i = 0; i < meteors.length; i++) {
     meteors[i].display();
     meteors[i].move();
   }
