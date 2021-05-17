@@ -8,10 +8,11 @@ let h = 600;
 let player;
 let meteors = [];
 let playerImg;
+let meteorsImg;
 
 function preload(){
   playerImg = loadImage('assets/First_Character_Sprite.png');
-  
+  meteorsImg = loadImage('assets/Meteor_Pixelated.png');
 }
 
 

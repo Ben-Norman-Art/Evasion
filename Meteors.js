@@ -9,7 +9,7 @@ class Meteors {
 
   display(){
     //rect(this.x, this.y, this.r, this.r);
-    rect(this.x, this.y, this.r, this.r);
+    image(meteorsImg, this.x, this.y, this.r, this.r);
   }
 
   move(){
