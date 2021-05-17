@@ -31,6 +31,8 @@ function title() {
   stroke(0);
   text('MY GAME', 100, 100);
 
+
+  textSize(30);
   text('Click anywhere to start', 100, 300);
 }
 
