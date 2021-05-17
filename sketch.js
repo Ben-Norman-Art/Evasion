@@ -6,6 +6,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
+let meteors;
 
 
 
@@ -15,6 +16,8 @@ function setup() {
   textFont('back-to-1982');
 
   player = new Player();
+
+  meteors = new Meteors();
 }
 
 function draw() {
@@ -61,6 +64,11 @@ function level1() {
   text('Click for Points', w/2, h - 30);
 
   player.display();
+
+
+  meteors.display();
+  meteors.move();
+
 }
 
 function level1MousedClicked() {
