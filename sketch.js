@@ -2,6 +2,7 @@
 
 let state = 'title';
 let cnv;
+let points;
 
 
 
@@ -23,6 +24,7 @@ function draw() {
     default;
       break
   }
+
 }
 
 function title() {
@@ -43,8 +45,10 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
+  text('Click for Points', 0, height - 30);
 }
 
 function level1MousedClicked() {
   console.log('canvas is clicked on level 1');
+  points++;
 }
