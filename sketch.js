@@ -27,7 +27,7 @@ function draw() {
 
       break;
     default:
-      break
+      break;
   }
 
 }
