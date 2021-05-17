@@ -84,11 +84,12 @@ function level1() {
     meteors[i].move();
   }
 
-  if (dist(player.x, player.y, meteors[0].x, meteors[0].y) <= (player.r + meteors[0].r) / 2) {
+  for (let i = meteors.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
     points++
     console.log(points);
   }
-
+}
   text(`Points: ${points}`, w / 4, h - 30);
 
 }
