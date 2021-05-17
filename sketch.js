@@ -82,7 +82,7 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  background(cityImg, 50, 150, 200);
+  background(50, 150, 200);
 
   if (random(1) <= 0.01) {
     meteors.push(new Meteors());
