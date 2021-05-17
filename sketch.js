@@ -43,10 +43,10 @@ function draw() {
 
 }
 
-function keyPressed(){
-  if (keyCode == LEFT_ARROW){
+function keyPressed() {
+  if (keyCode == LEFT_ARROW) {
     player.direction = 'left'
-  } else if (keyCode == RIGHT_ARROW){
+  } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
   }
 }
@@ -56,11 +56,11 @@ function title() {
   textSize(80);
   fill(255);
   textAlign(CENTER);
-  text('MY GAME', w/2, h/5);
+  text('MY GAME', w / 2, h / 5);
 
 
   textSize(30);
-  text('Click anywhere to start', w/2, h/2);
+  text('Click anywhere to start', w / 2, h / 2);
 }
 
 function titleMouseClicked() {
@@ -71,19 +71,25 @@ function titleMouseClicked() {
 function level1() {
   background(50, 150, 200);
 
+  if (random(1)) <= 0.01 {
+    meteors.push(new Meteors());
+  }
 
   player.display();
   player.move();
 
-  meteors[0].display();
-  meteors[0].move();
 
-  if (dist(player.x, player.y, meteors[0].x, meteors[0].y) <= (player.r + meteors[0].r) / 2){
+  for (let i = 0; i < coins.length; i++) {
+    meteors[i].display();
+    meteors[i].move();
+  }
+
+  if (dist(player.x, player.y, meteors[0].x, meteors[0].y) <= (player.r + meteors[0].r) / 2) {
     points++
     console.log(points);
   }
 
-  text(`Points: ${points}`, w/4, h - 30);
+  text(`Points: ${points}`, w / 4, h - 30);
 
 }
 
@@ -96,18 +102,18 @@ function level1MousedClicked() {
   //}
 }
 
-function youWin(){
+function youWin() {
   background(255, 50, 90);
   textSize(80);
   stroke(0);
-  text('You Win', w/2, h/2);
+  text('You Win', w / 2, h / 2);
 
 
   textSize(30);
-  text('Click anywhere to restart', w/2, h * 3/4);
+  text('Click anywhere to restart', w / 2, h * 3 / 4);
 }
 
-function youWinMouseClicked(){
+function youWinMouseClicked() {
   state = 'level 1';
   points = 0;
 }
