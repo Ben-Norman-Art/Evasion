@@ -12,7 +12,7 @@ let player;
 function setup() {
   cnv = createCanvas(w, h);
 
-  textFont('monaco');
+  textFont('back-to-1982');
 
   player = new Player();
 }
@@ -59,6 +59,8 @@ function titleMouseClicked() {
 function level1() {
   background(50, 150, 200);
   text('Click for Points', w/2, h - 30);
+
+  player.display();
 }
 
 function level1MousedClicked() {
