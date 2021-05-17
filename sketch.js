@@ -21,10 +21,6 @@ function draw() {
   }
 }
 
-function mousePressed(){
-  state = 'level 1';
-}
-
 function title() {
   background(100);
   textSize(80);
