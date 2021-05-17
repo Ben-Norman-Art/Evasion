@@ -1,11 +1,13 @@
 'use strict'
 
 let state = 'title';
+let cnv;
 
 
 
 function setup() {
-  createCanvas(750, 750);
+  cnv = createCanvas(600, 600);
+  cnv.mouseClicked()
 }
 
 function draw() {
@@ -19,6 +21,10 @@ function draw() {
 
 function mousePressed(){
   state = 'level 1';
+}
+
+function canvasClicked(){
+
 }
 
 function title() {
