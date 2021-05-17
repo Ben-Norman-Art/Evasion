@@ -7,18 +7,22 @@ let cnv;
 
 function setup() {
   cnv = createCanvas(600, 600);
-  cnv.mouseClicked(function(){
-    console.log('canvas is clicked');
-    state = 'level 1'
-  });
 }
 
 function draw() {
 
   if (state === 'title') {
     title();
+    cnv.mouseClicked(function(){
+      console.log('canvas is clicked');
+      state = 'level 1'
+    });
+
   } else if (state === 'level 1') {
     level1();
+    cnv.mouseClicked(function(){
+      console.log('canvas is clicked');
+    });
   }
 }
 
