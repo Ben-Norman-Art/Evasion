@@ -42,6 +42,14 @@ function draw() {
 
 }
 
+function keyPressed(){
+  if (keyCode == LEFT_ARROW){
+    player.direction = 'left'
+  } else if (keyCode == RIGHT_ARROW){
+    player.direction = 'right'
+  }
+}
+
 function title() {
   background(0);
   textSize(80);
@@ -64,7 +72,7 @@ function level1() {
   text('Click for Points', w/2, h - 30);
 
   player.display();
-
+  player.move();
 
   meteors.display();
   meteors.move();
