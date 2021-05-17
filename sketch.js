@@ -10,7 +10,7 @@ let meteors = [];
 let playerImg;
 let meteorsImg;
 
-function preload(){
+function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
   meteorsImg = loadImage('assets/Meteor_Pixelated.png');
 }
@@ -78,7 +78,7 @@ function titleMouseClicked() {
 function level1() {
   background(50, 150, 200);
 
-  if (random(1) <= 0.01){
+  if (random(1) <= 0.01) {
     meteors.push(new Meteors());
   }
 
@@ -91,16 +91,16 @@ function level1() {
     meteors[i].move();
   }
 
-  for (let i = meteors.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
-    points++
-    console.log(points);
-    meteors.splice(i, 1);
-  } else if (meteors[i].y > h){
-    meteors.splice(i, 1);
-    console.log('meteors are gone');
+  for (let i = meteors.length - 1; i >= 0; i--) {
+    if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
+      points++
+      console.log(points);
+      meteors.splice(i, 1);
+    } else if (meteors[i].y > h) {
+      meteors.splice(i, 1);
+      console.log('meteors are gone');
+    }
   }
-}
   text(`Points: ${points}`, w / 4, h - 30);
 
 }

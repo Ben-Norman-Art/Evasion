@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.r = 50;
+    this.r = 200;
     this.x = w / 2;
     this.y = h - this.r;
     this.speed = 2;
@@ -18,12 +18,15 @@ class Player {
       case 'still':
 
         break;
-
       case 'right':
-        this.x += this.speed;
+        if (this.x < w - this.r) {
+          this.x += this.speed;
+        }
         break;
       case 'left':
-        this.x -= this.speed;
+        if (this.x > 0) {
+          this.x -= this.speed;
+        }
         break;
       default:
         break;
