@@ -7,7 +7,7 @@ let cnv;
 
 function setup() {
   cnv = createCanvas(600, 600);
-  cnv.mouseClicked(canvasClicekd);
+  cnv.mouseClicked(canvasClicked);
 }
 
 function draw() {
