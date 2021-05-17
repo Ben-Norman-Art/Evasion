@@ -9,6 +9,7 @@ function setup() {
   cnv = createCanvas(600, 600);
   cnv.mouseClicked(function(){
     console.log('canvas is clicked');
+    state = 'level 1'
   });
 }
 
