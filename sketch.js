@@ -17,7 +17,7 @@ let imageCounter = 0;
 function preload() {
 
   player = loadImage('assets/First_Character_Sprite.png');
-  meteors = loadImage('assets/Meteor_Pixelated.png');
+  meteors = loadImage('assets/Meteor_Pixel.gif');
 
 
 
