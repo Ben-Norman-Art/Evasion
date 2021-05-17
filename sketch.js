@@ -17,7 +17,8 @@ function setup() {
 
   player = new Player();
 
-  meteors = new Meteors();
+  //meteors[0] = new Meteors();
+  meteors.push(new Meteors());
 }
 
 function draw() {
@@ -74,10 +75,10 @@ function level1() {
   player.display();
   player.move();
 
-  meteors.display();
-  meteors.move();
+  meteors[0].display();
+  meteors[0].move();
 
-  if (dist(player.x, player.y, meteors.x, meteors.y) <= (player.r + meteors.r) / 2){
+  if (dist(player.x, player.y, meteors[0].x, meteors[0].y) <= (player.r + meteors[0].r) / 2){
     points++
     console.log(points);
   }
