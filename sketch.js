@@ -9,6 +9,9 @@ let player;
 let meteors = [];
 let playerImg;
 let meteorsImg;
+let moutainImg;
+let forestImg;
+let cityImg;
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
