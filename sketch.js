@@ -82,7 +82,7 @@ function level1() {
     console.log(points);
   }
 
-  text('Points: ' + points, w/4, h - 30);
+  text(`Points: ${points}`, w/4, h - 30);
 
 }
 
