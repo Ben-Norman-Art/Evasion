@@ -21,7 +21,7 @@ function draw() {
       level1();
       cnv.mouseClicked(level1MousedClicked);
       break;
-    case; 'You Win':
+    case 'You Win':
       youWin();
       cnv.mouseClicked(youWinMouseClicked);
 
