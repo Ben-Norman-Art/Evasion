@@ -7,6 +7,12 @@ let w = 600;
 let h = 600;
 let player;
 let meteors = [];
+let playerImg;
+
+function preload(){
+  playerImg = loadImage('assets/First_Character_Sprite.png');
+  
+}
 
 
 
@@ -88,7 +94,7 @@ function level1() {
   if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
     points++
     console.log(points);
-    meteors.splice(i, 1); 
+    meteors.splice(i, 1);
   }
 }
   text(`Points: ${points}`, w / 4, h - 30);
