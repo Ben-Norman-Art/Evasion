@@ -19,10 +19,6 @@ function preload() {
   player = loadImage('assets/First_Character_Sprite.png');
   meteors = loadImage('assets/Meteor_Pixelated.png');
 
-
-  for (let i = 0; i <= 9; i++) {
-    arraybackground[i] = loadImage(`assets/Background_${i}.png`)
-  }
 }
 
 
@@ -69,11 +65,11 @@ function keyPressed() {
     player.direction = 'left'
   } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
-  } else if (keyCode == UP_ARROW) {
-    player.direction = 'up'
-  } else if (keyCode == DOWN_ARROW) {
-    player.direction = 'down'
   }
+}
+
+function keyReleased(){
+  player.direction = 'still';
 }
 
 

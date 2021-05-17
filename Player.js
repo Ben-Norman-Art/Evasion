@@ -23,13 +23,11 @@ class Player {
         if (this.x < w - this.r) {
           this.x -= this.speed;
         }
-        this.x -= this.speed
         break;
       case 'left':
         if (this.x > 0) {
           this.x -= this.speed;
         }
-        this.x -= this.speed
         break;
       default:
         break;
