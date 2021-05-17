@@ -13,16 +13,11 @@ function draw() {
 
   if (state === 'title') {
     title();
-    cnv.mouseClicked(function(){
-      console.log('canvas is clicked');
-      state = 'level 1'
-    });
+    cnv.mouseClicked(titlemouseClicked);
 
   } else if (state === 'level 1') {
     level1();
-    cnv.mouseClicked(function(){
-      console.log('canvas is clicked');
-    });
+    cnv.mouseClicked(level1MousedClicked); 
   }
 }
 
@@ -37,6 +32,15 @@ function title() {
   text('Click anywhere to start', 100, 300);
 }
 
-function level1(){
+function titleMouseClicked() {
+  console.log('canvas is clicked on title page');
+  state = 'level 1'
+}
+
+function level1() {
   background(50, 150, 200);
+}
+
+function level1MousedClicked(){
+  console.log('canvas is clicked on level 1');
 }
