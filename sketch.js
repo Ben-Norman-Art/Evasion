@@ -7,7 +7,9 @@ let cnv;
 
 function setup() {
   cnv = createCanvas(600, 600);
-  cnv.mouseClicked(function(){
+  cnv.mouseClicked(function(
+    console.log('canvas is clicked');
+  ){
 
   });
 }
