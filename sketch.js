@@ -26,7 +26,7 @@ function draw() {
       cnv.mouseClicked(youWinMouseClicked);
 
       break;
-    default;
+    default:
       break
   }
 
