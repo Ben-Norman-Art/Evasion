@@ -19,6 +19,10 @@ function preload() {
   player = loadImage('assets/First_Character_Sprite.png');
   meteors = loadImage('assets/Meteor_Pixelated.png');
 
+
+  for (let i = 0; i <= 9; i++) {
+    arraybackground[i] = loadImage(`assets/Background_${i}.png`)
+  }
 }
 
 
@@ -53,6 +57,7 @@ function draw() {
   }
 
 
+
 function keyPressed() {
   if (keyCode == LEFT_ARROW) {
     player.direction = 'left'
@@ -62,7 +67,7 @@ function keyPressed() {
 }
 
 function keyReleased(){
-  player.direction = 'still';
+  player.direction = 'still'
 }
 
 
