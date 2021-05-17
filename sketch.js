@@ -159,3 +159,4 @@ function youWinMouseClicked() {
   state = 'level 1';
   points = 0;
 }
+}
