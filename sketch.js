@@ -88,6 +88,7 @@ function level1() {
   if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
     points++
     console.log(points);
+    meteors.splice(i, 1); 
   }
 }
   text(`Points: ${points}`, w / 4, h - 30);
