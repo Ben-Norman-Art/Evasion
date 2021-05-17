@@ -11,13 +11,17 @@ function setup() {
 
 function draw() {
 
-  if (state === 'title') {
-    title();
-    cnv.mouseClicked(titlemouseClicked);
-
-  } else if (state === 'level 1') {
-    level1();
-    cnv.mouseClicked(level1MousedClicked); 
+  switch (state) {
+    case 'title':
+      title();
+      cnv.mouseClicked(titleMouseClicked);
+      break;
+    case 'level 1':
+      level1();
+      cnv.mouseClicked(level1MousedClicked);
+      break;
+    default;
+      break
   }
 }
 
@@ -41,6 +45,6 @@ function level1() {
   background(50, 150, 200);
 }
 
-function level1MousedClicked(){
+function level1MousedClicked() {
   console.log('canvas is clicked on level 1');
 }
