@@ -14,6 +14,7 @@ let mountainImg;
 //let cityImg;
 let bgImg = [];
 let imgNum = 0;
+let pressStart;
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
@@ -21,6 +22,8 @@ function preload() {
   bgImg[0] = loadImage('assets/Background_1.png');
   bgImg[1] = loadImage('assets/Background_0.png');
   bgImg[2] = loadImage('assets/Background_2.png');
+
+  pressStart = loadFont('assets/ka1.ttf');
 }
 
 
@@ -28,7 +31,7 @@ function preload() {
 function setup() {
   cnv = createCanvas(w, h);
 
-  textFont('bahnscrift');
+  textFont(pressStart);
 
   player = new Player();
 
@@ -37,6 +40,8 @@ function setup() {
 }
 
 function draw() {
+
+
 
   switch (state) {
     case 'title':
@@ -64,6 +69,10 @@ function keyPressed() {
   } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
   }
+}
+
+function keyReleased() {
+  player.direction = 'still';
 }
 
 function title() {
