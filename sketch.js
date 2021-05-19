@@ -13,6 +13,8 @@ let mountainImg;
 let bgImg = [];
 let imgNum = 0;
 let pressStart;
+let meteorHome;
+let gameOverImg;
 
 
 function preload() {
@@ -21,6 +23,9 @@ function preload() {
   bgImg[0] = loadImage('assets/Background_1.png');
   bgImg[1] = loadImage('assets/Background_0.png');
   bgImg[2] = loadImage('assets/Background_2.png');
+  bgImg[3] = loadImage('assets/Background_3.png');
+  meteorHome = loadImage('assets/Meteor_Home.gif');
+  gameOverImg = loadImage('assets/Game_Over.png');
 
   pressStart = loadFont('assets/ka1.ttf');
 }
@@ -55,7 +60,10 @@ function draw() {
     case 'You Win':
       youWin();
       cnv.mouseClicked(youWinMouseClicked);
-
+      break;
+      case 'Game Over':
+      gameOver();
+      cnv.mouseClicked(gameOverMouseClicked);
       break;
     default:
       break;
@@ -92,6 +100,7 @@ function keyReleased() {
 
 function title() {
   background(0);
+  image(meteorHome, w / 2, h / 2);
   textSize(80);
   fill(255);
   textAlign(CENTER);
@@ -132,18 +141,19 @@ function level1() {
 
   for (let i = meteors.length - 1; i >= 0; i--) {
     if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
-      points++;
+      points--;
       console.log(points);
       meteors.splice(i, 1);
     } else if (meteors[i].y > h) {
       meteors.splice(i, 1);
     }
   }
-  fill(225, 0, 0);
-  text(`Points: ${points}`, w / 7, h/8);
+
 
   if (points >= 10){
     state = 'You Win';
+  } else if (points <= -1){
+    state = 'Game Over';
   }
 
 }
@@ -161,6 +171,7 @@ function youWin() {
   background(255, 50, 90);
   textSize(80);
   stroke(0);
+  fill(0);
   text('You Win', w / 2, h / 2);
 
 
@@ -169,6 +180,25 @@ function youWin() {
 }
 
 function youWinMouseClicked() {
+  state = 'level 1';
+  points = 0;
+}
+
+function gameOver(){
+  background(255, 50, 90);
+  image(gameOverImg, w / 2, h / 2);
+  textSize(80);
+  stroke(0);
+  fill(0);
+  text('Game Over', w / 2, h / 4);
+
+
+  textSize(30);
+  text('Click Anywhere to Restart', w / 2, h * 3 / 4);
+}
+
+
+function gameOverMouseClicked(){
   state = 'level 1';
   points = 0;
 }
