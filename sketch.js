@@ -10,11 +10,10 @@ let meteors = [];
 let playerImg;
 let meteorsImg;
 let mountainImg;
-//let forestImg;
-//let cityImg;
 let bgImg = [];
 let imgNum = 0;
 let pressStart;
+
 
 function preload() {
   playerImg = loadImage('assets/First_Character_Sprite.png');
@@ -26,10 +25,11 @@ function preload() {
   pressStart = loadFont('assets/ka1.ttf');
 }
 
-
-
 function setup() {
   cnv = createCanvas(w, h);
+  frameRate(300);
+
+  imageMode(CENTER);
 
   textFont(pressStart);
 
@@ -72,7 +72,22 @@ function keyPressed() {
 }
 
 function keyReleased() {
+
+  let numKeyPressed = 0;
+
+  if (keyIsDown(LEFT_ARROW)){
+    numKeyPressed++;
+  }
+  if (keyIsDown(RIGHT_ARROW)){
+    numKeyPressed++;
+  }
+
+  console.log(numKeyPressed);
+
+
+  if (numKeyPressed == 0){
   player.direction = 'still';
+}
 }
 
 function title() {
@@ -80,24 +95,29 @@ function title() {
   textSize(80);
   fill(255);
   textAlign(CENTER);
-  text('MY GAME', w / 2, h / 5);
+  text('Evasion', w / 2, h / 5);
+
+
+  textAlign(CENTER);
+  textSize(30);
+  text('Use the Right and Left Keys', w / 2, h / 3.5);
+  text('to Evade the objects ', w / 2, h / 3);
 
 
   textSize(30);
-  text('Click anywhere to start', w / 2, h / 2);
+  text('Click anywhere to start', w/2, h - 30);
 }
 
 function titleMouseClicked() {
-  console.log('canvas is clicked on title page');
   state = 'level 1';
   imgNum = int(random(bgImg.length));
 }
 
 function level1() {
   background(50, 150, 200);
-  image(bgImg[imgNum], 0, 0);
+  image(bgImg[imgNum], w/2, h/2);
 
-  if (random(1) <= 0.01) {
+  if (random(1) <= 0.04) {
     meteors.push(new Meteors());
   }
 
@@ -112,15 +132,19 @@ function level1() {
 
   for (let i = meteors.length - 1; i >= 0; i--) {
     if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
-      points++
+      points++;
       console.log(points);
       meteors.splice(i, 1);
     } else if (meteors[i].y > h) {
       meteors.splice(i, 1);
-      console.log('meteors are gone');
     }
   }
-  text(`Points: ${points}`, w / 4, h - 30);
+  fill(225, 0, 0);
+  text(`Points: ${points}`, w / 7, h/8);
+
+  if (points >= 10){
+    state = 'You Win';
+  }
 
 }
 

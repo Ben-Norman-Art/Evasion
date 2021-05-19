@@ -3,6 +3,7 @@ class Meteors {
     this.r = 250;
     this.x = random(w);
     this.y = 0 - this.r;
+    this.speed = 4;
   }
 
 
@@ -12,6 +13,6 @@ class Meteors {
   }
 
   move() {
-    this.y++
+    this.y += this.speed;
   }
 }
