@@ -15,6 +15,7 @@ let imgNum = 0;
 let pressStart;
 let meteorHome;
 let gameOverImg;
+let evadeMeteors = 0;
 
 
 function preload() {
@@ -140,13 +141,17 @@ function level1() {
   }
 
   for (let i = meteors.length - 1; i >= 0; i--) {
-    if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + (meteors[i].r/5)) / 2) {
+    if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r/2 + (meteors[i].r/5)) / 2) {
       points--;
       console.log(points);
       meteors.splice(i, 1);
     } else if (meteors[i].y > h) {
       meteors.splice(i, 1);
+      evadeMeteors++
     }
+    fill(255);
+    text('Meteors Avoided: '+ evadeMeteors, w / 2 - 150, h - 25);
+
   }
 
 
@@ -192,9 +197,13 @@ function gameOver(){
   fill(0);
   text('Game Over', w / 2, h / 4);
 
+  textSize(30);
+  fill(0);
+  text('Meteors Evaded =' + evadeMeteors, w / 2, h / 2);
+
 
   textSize(30);
-  text('Click Anywhere to Restart', w / 2, h * 3 / 4);
+  text('Click Anywhere to Restart', w / 2, h - 25);
 }
 
 
@@ -202,4 +211,5 @@ function gameOverMouseClicked(){
   state = 'level 1';
   meteors.splice(0);
   points = 0;
+  evadeMeteors = 0;
 }
