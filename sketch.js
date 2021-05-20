@@ -3,8 +3,8 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 750;
-let h = 750;
+let w = 600;
+let h = 600;
 let player;
 let meteors = [];
 let playerImg;
@@ -109,7 +109,7 @@ function title() {
 
 
   textAlign(CENTER);
-  textSize(30);
+  textSize(25);
   text('Use the Right and Left Keys', w / 2, h / 3.5);
   text('to Evade the objects ', w / 2, h / 3);
 
@@ -149,6 +149,7 @@ function level1() {
       meteors.splice(i, 1);
       evadeMeteors++
     }
+    textSize(20);
     fill(255);
     text('Meteors Avoided: '+ evadeMeteors, w / 2 - 150, h - 25);
 
@@ -192,18 +193,18 @@ function youWinMouseClicked() {
 function gameOver(){
   background(255, 50, 90);
   image(gameOverImg, w / 2, h / 2);
-  textSize(80);
+  textSize(70);
   stroke(0);
   fill(0);
   text('Game Over', w / 2, h / 4);
 
-  textSize(30);
+  textSize(20);
   fill(0);
   text('Meteors Evaded =' + evadeMeteors, w / 2, h / 2);
 
 
-  textSize(30);
-  text('Click Anywhere to Restart', w / 2, h - 100);
+  textSize(25);
+  text('Click Anywhere to Restart', w / 2, h - 40);
 
   textSize(15);
   fill(0);
