@@ -127,7 +127,7 @@ function level1() {
   background(50, 150, 200);
   image(bgImg[imgNum], w/2, h/2);
 
-  if (random(1) <= 0.04) {
+  if (random(1) <= 0.05) {
     meteors.push(new Meteors());
   }
 
