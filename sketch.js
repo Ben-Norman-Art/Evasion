@@ -140,7 +140,7 @@ function level1() {
   }
 
   for (let i = meteors.length - 1; i >= 0; i--) {
-    if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + meteors[i].r) / 2) {
+    if (dist(player.x, player.y, meteors[i].x, meteors[i].y) <= (player.r + (meteors[i].r/5)) / 2) {
       points--;
       console.log(points);
       meteors.splice(i, 1);
@@ -200,5 +200,6 @@ function gameOver(){
 
 function gameOverMouseClicked(){
   state = 'level 1';
+  meteors.splice(0);
   points = 0;
 }

@@ -19,12 +19,12 @@ class Player {
 
         break;
       case 'right':
-        if (this.x < w - this.r / 2) {
+        if (this.x < w - this.r / 5) {
           this.x += this.speed;
         }
         break;
       case 'left':
-        if (this.x - this.r / 2 > 0) {
+        if (this.x - this.r / 5> 0) {
           this.x -= this.speed;
         }
         break;
