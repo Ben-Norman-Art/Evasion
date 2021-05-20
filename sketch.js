@@ -203,7 +203,11 @@ function gameOver(){
 
 
   textSize(30);
-  text('Click Anywhere to Restart', w / 2, h - 25);
+  text('Click Anywhere to Restart', w / 2, h - 100);
+
+  textSize(15);
+  fill(0);
+  text('Font Credited to Vic Fieger', w - 155, h - 10);
 }
 
 
